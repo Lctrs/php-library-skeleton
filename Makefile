@@ -6,16 +6,17 @@ it: coding-standards dependency-analysis static-code-analysis tests ## Runs the 
 
 .PHONY: code-coverage
 code-coverage: vendor ## Collects coverage from running unit tests with phpunit/phpunit
-	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml --coverage-text
+	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml.dist --coverage-text
 
 .PHONY: coding-standards
-coding-standards: vendor ## Fixes code style issues with friendsofphp/php-cs-fixer
-	mkdir -p .build/php-cs-fixer
-	vendor/bin/php-cs-fixer fix --config=.php_cs --diff --diff-format=udiff --verbose
+coding-standards: vendor ## Fixes code style issues with doctrine/coding-standard
+	mkdir -p .build/php_codesniffer
+	vendor/bin/phpcbf
+	vendor/bin/phpcs
 
 .PHONY: dependency-analysis
 dependency-analysis: vendor ## Runs a dependency analysis with maglnet/composer-require-checker
-	docker run --interactive --rm --tty --volume ${PWD}:/app webfactory/composer-require-checker:2.0.0
+	vendor/bin/composer-require-checker
 
 .PHONY: help
 help: ## Displays this list of targets with descriptions
@@ -29,7 +30,7 @@ mutation-tests: vendor ## Runs mutation tests with infection/infection
 .PHONY: static-code-analysis
 static-code-analysis: vendor ## Runs a static code analysis with phpstan/phpstan and vimeo/psalm
 	mkdir -p .build/phpstan
-	vendor/bin/phpstan analyse --configuration=phpstan.neon
+	vendor/bin/phpstan analyse --configuration=phpstan.neon.dist
 	mkdir -p .build/psalm
 	vendor/bin/psalm --config=psalm.xml --show-info=false --stats
 
@@ -37,16 +38,16 @@ static-code-analysis: vendor ## Runs a static code analysis with phpstan/phpstan
 static-code-analysis-baseline: vendor ## Generates a baseline for static code analysis with phpstan/phpstan and vimeo/psalm
 	mkdir -p .build/phpstan
 	echo '' > phpstan-baseline.neon
-	vendor/bin/phpstan analyze --configuration=phpstan.neon --error-format=baselineNeon > phpstan-baseline.neon || true
+	vendor/bin/phpstan analyze --configuration=phpstan.neon.dist --error-format=baselineNeon > phpstan-baseline.neon || true
 	mkdir -p .build/psalm
 	vendor/bin/psalm --config=psalm.xml --set-baseline=psalm-baseline.xml
 
 .PHONY: tests
 tests: vendor ## Runs auto-review, unit, and integration tests with phpunit/phpunit
 	mkdir -p .build/phpunit
-	vendor/bin/phpunit --configuration=test/AutoReview/phpunit.xml
-	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml
-	vendor/bin/phpunit --configuration=test/Integration/phpunit.xml
+	vendor/bin/phpunit --configuration=test/AutoReview/phpunit.xml.dist
+	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml.dist
+	vendor/bin/phpunit --configuration=test/Integration/phpunit.xml.dist
 
 vendor: composer.json composer.lock
 	composer validate --strict

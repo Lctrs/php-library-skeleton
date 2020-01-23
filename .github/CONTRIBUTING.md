@@ -6,7 +6,7 @@ For details, see [`workflows/continuous-integration.yml`](workflows/continuous-i
 
 ## Coding Standards
 
-We are using [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce coding standards.
+We are using [`doctrine/coding-standard`](https://github.com/doctrine-coding-standard) to enforce coding standards.
 
 Run
 

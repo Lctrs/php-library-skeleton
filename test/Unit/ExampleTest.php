@@ -2,31 +2,22 @@
 
 declare(strict_types=1);
 
-/**
- * Copyright (c) 2017-2020 Andreas Möller
- *
- * For the full copyright and license information, please view
- * the LICENSE.md file that was distributed with this source code.
- *
- * @see https://github.com/ergebnis/php-library-template
- */
+namespace Lctrs\Library\Test\Unit;
 
-namespace Ergebnis\Library\Test\Unit;
-
-use Ergebnis\Library\Example;
 use Ergebnis\Test\Util\Helper;
-use PHPUnit\Framework;
+use Lctrs\Library\Example;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
  *
- * @covers \Ergebnis\Library\Example
+ * @covers \Lctrs\Library\Example
  */
-final class ExampleTest extends Framework\TestCase
+final class ExampleTest extends TestCase
 {
     use Helper;
 
-    public function testFromNameReturnsExample(): void
+    public function testFromNameReturnsExample() : void
     {
         $name = self::faker()->sentence;
 

@@ -31,18 +31,7 @@ branches:
           - "codecov/patch"
           - "codecov/project"
         strict: false
-      restrictions:
-
-        # https://developer.github.com/v3/repos/branches/#parameters-1
-
-        # Note: User, app, and team restrictions are only available for organization-owned repositories.
-        # Set to null to disable when using this configuration for a repository on a personal account.
-
-        apps:
-          - "dependabot-preview"
-        teams: []
-        users:
-          - "ergebnis-bot"
+      restrictions: null
 
 # https://developer.github.com/v3/issues/labels/#create-a-label
 # https://developer.github.com/v3/issues/labels/#update-a-label
@@ -87,9 +76,9 @@ repository:
   has_pages: false
   has_projects: false
   has_wiki: false
-  name: "php-library-template"
+  name: "php-library-skeleton"
   private: false
 
   # https://developer.github.com/v3/repos/branches/#remove-branch-protection
 
-  topics: "php, library, template"
+  topics: "php, library, template, skeleton"
