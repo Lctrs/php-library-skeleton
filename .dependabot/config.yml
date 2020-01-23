@@ -3,7 +3,7 @@
 version: 1
 
 update_configs:
-    default_labels:
+  - default_labels:
       - "dependency"
     directory: "/"
     package_manager: "github_actions"
