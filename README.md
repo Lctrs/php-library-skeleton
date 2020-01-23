@@ -1,13 +1,13 @@
 # php-library-template
 
-[![Continuous Deployment](https://github.com/ergebnis/php-library-template/workflows/Continuous%20Deployment/badge.svg)](https://github.com/ergebnis/php-library-template/actions)
-[![Continuous Integration](https://github.com/ergebnis/php-library-template/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/php-library-template/actions)
+[![Continuous Deployment](https://github.com/Lctrs/php-library-skeleton/workflows/Continuous%20Deployment/badge.svg)](https://github.com/Lctrs/php-library-skeleton/actions)
+[![Continuous Integration](https://github.com/Lctrs/php-library-skeleton/workflows/Continuous%20Integration/badge.svg)](https://github.com/Lctrs/php-library-skeleton/actions)
 
-[![Code Coverage](https://codecov.io/gh/ergebnis/php-library-template/branch/master/graph/badge.svg)](https://codecov.io/gh/ergebnis/php-library-template)
-[![Type Coverage](https://shepherd.dev/github/ergebnis/php-library-template/coverage.svg)](https://shepherd.dev/github/ergebnis/php-library-template)
+[![Code Coverage](https://codecov.io/gh/Lctrs/php-library-skeleton/branch/master/graph/badge.svg)](https://codecov.io/gh/Lctrs/php-library-skeleton)
+[![Type Coverage](https://shepherd.dev/github/Lctrs/php-library-skeleton/coverage.svg)](https://shepherd.dev/github/Lctrs/php-library-skeleton)
 
-[![Latest Stable Version](https://poser.pugx.org/ergebnis/php-library-template/v/stable)](https://packagist.org/packages/ergebnis/php-library-template)
-[![Total Downloads](https://poser.pugx.org/ergebnis/php-library-template/downloads)](https://packagist.org/packages/ergebnis/php-library-template)
+[![Latest Stable Version](https://img.shields.io/packagist/v/Lctrs/php-library-skeleton?style=flat-square)](https://packagist.org/packages/Lctrs/php-library-skeleton)
+[![Total Downloads](https://img.shields.io/packagist/dt/Lctrs/php-library-skeleton?style=flat-square)](https://packagist.org/packages/Lctrs/php-library-skeleton)
 
 ## Installation
 
@@ -16,7 +16,7 @@
 Run
 
 ```
-$ composer require ergebnis/php-library-template
+$ composer require lctrs/php-library-skeleton
 ```
 
 ## Usage
@@ -30,10 +30,6 @@ Please have a look at [`CHANGELOG.md`](CHANGELOG.md).
 ## Contributing
 
 Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
-
-## Code of Conduct
-
-Please have a look at [`CODE_OF_CONDUCT.md`](.github/CODE_OF_CONDUCT.md).
 
 ## License
 
