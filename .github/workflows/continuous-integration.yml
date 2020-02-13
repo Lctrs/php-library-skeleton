@@ -32,7 +32,7 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@1.7.4"
+        uses: "shivammathur/setup-php@1.8.2"
         with:
           coverage: "none"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
@@ -42,7 +42,7 @@ jobs:
         run: "composer validate --strict"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: "~/.composer/cache"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
@@ -67,7 +67,7 @@ jobs:
         run: "mkdir -p .build/php_codesniffer"
 
       - name: "Cache cache directory for squizlabs/php_codesniffer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: ".build/php_codesniffer"
           key: "php-${{ matrix.php-version }}-php_codesniffer-${{ hashFiles('**/composer.lock') }}"
@@ -94,14 +94,14 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@1.7.4"
+        uses: "shivammathur/setup-php@1.8.2"
         with:
           coverage: "none"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: "~/.composer/cache"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
@@ -140,14 +140,14 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@1.7.4"
+        uses: "shivammathur/setup-php@1.8.2"
         with:
           coverage: "none"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: "~/.composer/cache"
           key: "${{ matrix.php-version }}-composer-locked-${{ hashFiles('**/composer.lock') }}"
@@ -199,14 +199,14 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@1.7.4"
+        uses: "shivammathur/setup-php@1.8.2"
         with:
           coverage: "none"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: "~/.composer/cache"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
@@ -251,14 +251,14 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@1.7.4"
+        uses: "shivammathur/setup-php@1.8.2"
         with:
           coverage: "pcov"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: "~/.composer/cache"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
@@ -302,14 +302,14 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Install PHP with extensions"
-        uses: "shivammathur/setup-php@1.7.4"
+        uses: "shivammathur/setup-php@1.8.2"
         with:
           coverage: "pcov"
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
       - name: "Cache dependencies installed with composer"
-        uses: "actions/cache@v1.0.3"
+        uses: "actions/cache@v1.1.2"
         with:
           path: "~/.composer/cache"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('**/composer.lock') }}"
