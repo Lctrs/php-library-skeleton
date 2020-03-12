@@ -10,6 +10,7 @@ code-coverage: vendor ## Collects coverage from running unit tests with phpunit/
 
 .PHONY: coding-standards
 coding-standards: vendor ## Fixes code style issues with doctrine/coding-standard
+	yamllint -c .yamllint.yaml --strict .
 	mkdir -p .build/php_codesniffer
 	vendor/bin/phpcbf
 	vendor/bin/phpcs
