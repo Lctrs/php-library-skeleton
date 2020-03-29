@@ -34,9 +34,6 @@ jobs:
           extensions: "${{ env.REQUIRED_PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
-      - name: "Validate composer.json and composer.lock"
-        run: "composer validate --strict"
-
       - name: "Determine composer cache directory"
         id: "determine-composer-cache-directory"
         run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
@@ -66,7 +63,7 @@ jobs:
       - name: "Open pull request updating license year"
         uses: "gr2m/create-or-update-pull-request-action@v1.2.10"
         with:
-          author: "Lctrs <jerome@prmntr.me>"
+          author: "lctrs-bot <shurtmaiden@gmail.com>"
           branch: "feature/license-year"
           body: |
             This PR
@@ -76,4 +73,4 @@ jobs:
           path: "."
           title: "Enhancement: Update license year"
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: "${{ secrets.LCTRS_BOT_TOKEN }}"
