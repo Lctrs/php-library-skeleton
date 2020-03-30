@@ -4,8 +4,8 @@ We are using [GitHub Actions](https://github.com/features/actions) as a continuo
 
 For details, take a look at the following workflow configuration files:
 
-- [`workflows/continuous-deployment.yaml`](workflows/continuous-deployment.yaml)
-- [`workflows/continuous-integration.yaml`](workflows/continuous-integration.yaml)
+- [`workflows/integrate.yaml`](workflows/integrate.yaml)
+- [`workflows/release.yaml`](workflows/release.yaml)
 - [`workflows/renew.yaml`](workflows/renew.yaml)
 
 ## Coding Standards
