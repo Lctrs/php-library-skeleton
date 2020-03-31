@@ -3,12 +3,6 @@
 version: 1
 
 update_configs:
-  - default_labels:
-      - "dependency"
-    directory: "/"
-    package_manager: "github_actions"
-    update_schedule: "daily"
-
   - commit_message:
       include_scope: true
       prefix: "Build"
