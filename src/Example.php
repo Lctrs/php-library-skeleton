@@ -14,12 +14,12 @@ final class Example
         $this->name = $name;
     }
 
-    public static function fromName(string $name) : self
+    public static function fromName(string $name): self
     {
         return new self($name);
     }
 
-    public function name() : string
+    public function name(): string
     {
         return $this->name;
     }
