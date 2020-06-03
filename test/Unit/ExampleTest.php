@@ -17,7 +17,7 @@ final class ExampleTest extends TestCase
 {
     use Helper;
 
-    public function testFromNameReturnsExample() : void
+    public function testFromNameReturnsExample(): void
     {
         $name = self::faker()->sentence;
 
