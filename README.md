@@ -16,7 +16,7 @@
 
 Run
 
-```
+```sh
 $ composer require lctrs/php-library-skeleton
 ```
 
