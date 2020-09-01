@@ -49,13 +49,12 @@ jobs:
         run: "composer validate --strict"
 
       - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        uses: "./.github/actions/composer/composer/determine-cache-directory"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.1.1"
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
@@ -112,13 +111,12 @@ jobs:
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        uses: "./.github/actions/composer/composer/determine-cache-directory"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.1.1"
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
@@ -162,13 +160,12 @@ jobs:
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        uses: "./.github/actions/composer/composer/determine-cache-directory"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.1.1"
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
@@ -242,13 +239,12 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
 
       - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        uses: "./.github/actions/composer/composer/determine-cache-directory"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.1.1"
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
@@ -301,13 +297,12 @@ jobs:
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
 
       - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        uses: "./.github/actions/composer/composer/determine-cache-directory"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.1.1"
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
@@ -356,13 +351,12 @@ jobs:
           php-version: "${{ matrix.php-version }}"
 
       - name: "Determine composer cache directory"
-        id: "determine-composer-cache-directory"
-        run: "echo \"::set-output name=directory::$(composer config cache-dir)\""
+        uses: "./.github/actions/composer/composer/determine-cache-directory"
 
       - name: "Cache dependencies installed with composer"
         uses: "actions/cache@v2.1.1"
         with:
-          path: "${{ steps.determine-composer-cache-directory.outputs.directory }}"
+          path: "${{ env.COMPOSER_CACHE_DIR }}"
           key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
           restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
