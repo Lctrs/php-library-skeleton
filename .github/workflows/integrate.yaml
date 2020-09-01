@@ -9,6 +9,7 @@ on: # yamllint disable-line rule:truthy
       - "master"
 
 env:
+  LCTRS_BOT_NAME: "lctrs-bot"
   MIN_COVERED_MSI: 100
   MIN_MSI: 100
   PHP_EXTENSIONS: "mbstring"
@@ -360,7 +361,7 @@ jobs:
       )
 
     steps:
-      - name: "Request review from @lctrs-bot"
+      - name: "Request review from @${{ env.LCTRS_BOT_NAME }}"
         uses: "actions/github-script@v3.0.0"
         with:
           github-token: "${{ secrets.LCTRS_BOT_TOKEN }}"
@@ -369,7 +370,7 @@ jobs:
             const repository = context.repo
 
             const reviewers = [
-              "lctrs-bot",
+              "${{ env.LCTRS_BOT_NAME }}",
             ]
 
             await github.pulls.requestReviewers({
@@ -379,7 +380,7 @@ jobs:
                 reviewers: reviewers,
             })
 
-      - name: "Assign @lctrs-bot"
+      - name: "Assign @${{ env.LCTRS_BOT_NAME }}"
         uses: "actions/github-script@v3.0.0"
         with:
           github-token: "${{ secrets.LCTRS_BOT_TOKEN }}"
@@ -388,7 +389,7 @@ jobs:
             const repository = context.repo
 
             const assignees = [
-              "lctrs-bot",
+              "${{ env.LCTRS_BOT_NAME }}",
             ]
 
             await github.issues.addAssignees({
@@ -400,7 +401,7 @@ jobs:
 
       - name: "Approve pull request"
         uses: "actions/github-script@v3.0.0"
-        if: "github.actor != 'lctrs-bot'"
+        if: "github.actor != '${{ env.LCTRS_BOT_NAME }}'"
         with:
           github-token: "${{ secrets.LCTRS_BOT_TOKEN }}"
           script: |
