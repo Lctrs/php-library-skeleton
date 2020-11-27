@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
 
         dependencies:
           - "locked"
@@ -103,6 +103,7 @@ jobs:
           coverage: "none"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
+          tools: "phive"
 
       - name: "Determine composer cache directory"
         uses: "./.github/actions/composer/composer/determine-cache-directory"
@@ -119,8 +120,11 @@ jobs:
         with:
           dependencies: "${{ matrix.dependencies }}"
 
+      - name: "Install tools with phive"
+        run: "phive --no-progress install --trust-gpg-keys D2CCAC42F6295E7D"
+
       - name: "Run maglnet/composer-require-checker"
-        run: "vendor/bin/composer-require-checker check --config-file=$(pwd)/composer-require-checker.json"
+        run: ".phive/composer-require-checker check --config-file=$(pwd)/composer-require-checker.json"
 
   static-code-analysis:
     name: "Static Code Analysis"
@@ -130,7 +134,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
 
         dependencies:
           - "locked"
@@ -185,7 +189,7 @@ jobs:
           restore-keys: "php-${{ matrix.php-version }}-psalm-"
 
       - name: "Run vimeo/psalm"
-        run: "vendor/bin/psalm --config=psalm.xml --diff --diff-methods --shepherd --show-info=false --stats --threads=4"
+        run: "vendor/bin/psalm --config=psalm.xml --diff --shepherd --show-info=false --stats --threads=4"
 
   tests:
     name: "Tests"
@@ -195,9 +199,9 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.2"
           - "7.3"
           - "7.4"
+          - "8.0"
 
         dependencies:
           - "lowest"
@@ -250,7 +254,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
 
         dependencies:
           - "locked"
@@ -300,7 +304,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "7.4"
+          - "8.0"
 
         dependencies:
           - "locked"
