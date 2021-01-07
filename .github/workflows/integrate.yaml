@@ -334,6 +334,8 @@ jobs:
 
       - name: "Run mutation tests with pcov and infection/infection"
         run: "vendor/bin/infection --configuration=infection.json.dist"
+        env:
+          STRYKER_DASHBOARD_API_KEY: "${{ secrets.STRYKER_DASHBOARD_API_KEY }}"
 
   merge:
     name: "Merge"

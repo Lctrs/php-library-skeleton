@@ -4,6 +4,7 @@
 [![Release](https://github.com/Lctrs/php-library-skeleton/workflows/Release/badge.svg)](https://github.com/Lctrs/php-library-skeleton/actions)
 [![Renew](https://github.com/Lctrs/php-library-skeleton/workflows/Renew/badge.svg)](https://github.com/Lctrs/php-library-skeleton/actions)
 
+[![Mutation Score](https://img.shields.io/endpoint?url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FLctrs%2Fphp-library-skeleton%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/Lctrs/php-library-skeleton/master)
 [![Code Coverage](https://codecov.io/gh/Lctrs/php-library-skeleton/branch/master/graph/badge.svg)](https://codecov.io/gh/Lctrs/php-library-skeleton)
 [![Type Coverage](https://shepherd.dev/github/Lctrs/php-library-skeleton/coverage.svg)](https://shepherd.dev/github/Lctrs/php-library-skeleton)
 
