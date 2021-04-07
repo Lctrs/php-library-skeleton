@@ -18,7 +18,6 @@
     "ergebnis/composer-normalize": "^2.13.3",
     "ergebnis/license": "^1.1.0",
     "ergebnis/test-util": "^1.5.0",
-    "infection/infection": "^0.18.2",
     "phpstan/extension-installer": "^1.1.0",
     "phpstan/phpstan": "^0.12.83",
     "phpstan/phpstan-deprecation-rules": "^0.12.6",
