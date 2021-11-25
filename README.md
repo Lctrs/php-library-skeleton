@@ -18,7 +18,7 @@
 Run
 
 ```sh
-$ composer require lctrs/php-library-skeleton
+composer require lctrs/php-library-skeleton
 ```
 
 ## Usage
