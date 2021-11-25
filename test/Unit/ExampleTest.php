@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lctrs\Library\Test\Unit;
 
-use Ergebnis\Test\Util\Helper;
 use Lctrs\Library\Example;
 use PHPUnit\Framework\TestCase;
 
@@ -15,14 +14,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class ExampleTest extends TestCase
 {
-    use Helper;
-
     public function testFromNameReturnsExample(): void
     {
-        $name = self::faker()->sentence;
+        $example = Example::fromName('foo');
 
-        $example = Example::fromName($name);
-
-        self::assertSame($name, $example->name());
+        self::assertSame('foo', $example->name());
     }
 }
