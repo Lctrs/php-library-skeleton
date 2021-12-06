@@ -1,21 +1,25 @@
 {
   "name": "lctrs/php-library-skeleton",
-  "type": "library",
   "description": "Provides a GitHub repository template for a PHP library, using GitHub actions.",
-  "homepage": "https://github.com/Lctrs/php-library-skeleton",
   "license": "MIT",
+  "type": "library",
   "authors": [
     {
       "name": "Jérôme Parmentier",
       "email": "jerome@prmntr.me"
     }
   ],
+  "homepage": "https://github.com/Lctrs/php-library-skeleton",
+  "support": {
+    "issues": "https://github.com/Lctrs/php-library-skeleton/issues",
+    "source": "https://github.com/Lctrs/php-library-skeleton"
+  },
   "require": {
     "php": "^7.3.0 || >=8.0.0 <8.2.0"
   },
   "require-dev": {
     "doctrine/coding-standard": "^9.0.0",
-    "ergebnis/composer-normalize": "^2.16.0",
+    "ergebnis/composer-normalize": "^2.17.0",
     "ergebnis/license": "^1.1.0",
     "phpstan/extension-installer": "^1.1.0",
     "phpstan/phpstan": "^0.12.99",
@@ -25,10 +29,6 @@
     "phpunit/phpunit": "^9.5.10",
     "psalm/plugin-phpunit": "^0.16.1",
     "vimeo/psalm": "^4.14.0"
-  },
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": true
   },
   "autoload": {
     "psr-4": {
@@ -40,8 +40,8 @@
       "Lctrs\\Library\\Test\\": "test/"
     }
   },
-  "support": {
-    "issues": "https://github.com/Lctrs/php-library-skeleton/issues",
-    "source": "https://github.com/Lctrs/php-library-skeleton"
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
   }
 }
