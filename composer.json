@@ -1,6 +1,6 @@
 {
   "name": "lctrs/php-library-skeleton",
-  "description": "Provides a GitHub repository template for a PHP library, using GitHub actions.",
+  "description": "Provides a GitHub repository template for a PHP library, using GitHub Actions.",
   "license": "MIT",
   "type": "library",
   "authors": [
