@@ -160,7 +160,7 @@ jobs:
           restore-keys: "php-${{ matrix.php-version }}-psalm-"
 
       - name: "Run vimeo/psalm"
-        run: "vendor/bin/psalm --config=psalm.xml --diff --shepherd --show-info=false --stats --threads=4"
+        run: "vendor/bin/psalm --config=psalm.xml --output-format=github --shepherd --show-info=false --stats --threads=4"
 
   tests:
     name: "Tests"
@@ -202,10 +202,10 @@ jobs:
           dependency-versions: "${{ matrix.dependencies }}"
 
       - name: "Run unit tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit --configuration=test/Unit/phpunit.xml.dist"
+        run: "vendor/bin/phpunit --colors=always --configuration=test/Unit/phpunit.xml.dist"
 
       - name: "Run integration tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit --configuration=test/Integration/phpunit.xml.dist"
+        run: "vendor/bin/phpunit --colors=always --configuration=test/Integration/phpunit.xml.dist"
 
   code-coverage:
     name: "Code Coverage"
@@ -244,9 +244,9 @@ jobs:
       - name: "Collect code coverage with Xdebug and phpunit/phpunit"
         env:
           XDEBUG_MODE: "coverage"
-        run: "vendor/bin/phpunit --configuration=test/Unit/phpunit.xml.dist --coverage-clover=.build/phpunit/logs/clover.xml"
+        run: "vendor/bin/phpunit --colors=always --configuration=test/Unit/phpunit.xml.dist --coverage-clover=.build/phpunit/logs/clover.xml"
 
-      - name: "Send code coverage report to Codecov.io"
+      - name: "Send code coverage report to codecov.io"
         uses: "codecov/codecov-action@v2.1.0"
         with:
           files: ".build/phpunit/logs/clover.xml"
