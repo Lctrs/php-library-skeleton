@@ -235,6 +235,8 @@ jobs:
           dependency-versions: "${{ matrix.dependencies }}"
 
       - name: "Collect code coverage with Xdebug and phpunit/phpunit"
+        env:
+          XDEBUG_MODE: "coverage"
         run: "vendor/bin/phpunit --configuration=test/Unit/phpunit.xml.dist --coverage-clover=.build/phpunit/logs/clover.xml"
 
       - name: "Send code coverage report to Codecov.io"
@@ -281,3 +283,4 @@ jobs:
         run: ".tools/infection/vendor/bin/infection --configuration=infection.json.dist --logger-github"
         env:
           STRYKER_DASHBOARD_API_KEY: "${{ secrets.STRYKER_DASHBOARD_API_KEY }}"
+          XDEBUG_MODE: "coverage"
