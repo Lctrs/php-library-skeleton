@@ -43,6 +43,9 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
+
       - name: "Validate composer.json and composer.lock"
         run: "composer validate --ansi --strict"
 
@@ -91,6 +94,9 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
+
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
         uses: "ramsey/composer-install@2.1.0"
         with:
@@ -127,6 +133,9 @@ jobs:
           coverage: "none"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
+
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
         uses: "ramsey/composer-install@2.1.0"
@@ -188,6 +197,9 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
+
       - name: "Set up problem matchers for phpunit/phpunit"
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
 
@@ -225,6 +237,9 @@ jobs:
           coverage: "xdebug"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
+
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
 
       - name: "Set up problem matchers for phpunit/phpunit"
         run: "echo \"::add-matcher::${{ runner.tool_cache }}/phpunit.json\""
@@ -266,6 +281,9 @@ jobs:
           coverage: "xdebug"
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
+
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
 
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
         uses: "ramsey/composer-install@2.1.0"

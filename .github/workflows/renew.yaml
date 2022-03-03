@@ -36,6 +36,9 @@ jobs:
           extensions: "${{ env.PHP_EXTENSIONS }}"
           php-version: "${{ matrix.php-version }}"
 
+      - name: "Set up problem matchers for PHP"
+        run: "echo \"::add-matcher::${{ runner.tool_cache }}/php.json\""
+
       - name: "Install ${{ matrix.dependencies }} dependencies with composer"
         uses: "ramsey/composer-install@2.1.0"
         with:
