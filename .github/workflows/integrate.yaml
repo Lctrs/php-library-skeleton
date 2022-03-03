@@ -246,7 +246,7 @@ jobs:
           XDEBUG_MODE: "coverage"
         run: "vendor/bin/phpunit --colors=always --configuration=test/Unit/phpunit.xml.dist --coverage-clover=.build/phpunit/logs/clover.xml"
 
-      - name: "Send code coverage report to Codecov.io"
+      - name: "Send code coverage report to codecov.io"
         uses: "codecov/codecov-action@v2.1.0"
         with:
           files: ".build/phpunit/logs/clover.xml"
