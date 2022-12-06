@@ -12,12 +12,12 @@ jobs:
   coding-standards:
     name: "Coding Standards"
 
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "locked"
@@ -74,7 +74,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "locked"
@@ -113,7 +113,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "locked"
@@ -172,6 +172,7 @@ jobs:
         php-version:
           - "8.0"
           - "8.1"
+          - "8.2"
 
         dependencies:
           - "lowest"
@@ -213,7 +214,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "locked"
@@ -258,7 +259,7 @@ jobs:
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "locked"
