@@ -10,12 +10,12 @@ jobs:
   license:
     name: "License"
 
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
         php-version:
-          - "8.1"
+          - "8.2"
 
         dependencies:
           - "locked"
