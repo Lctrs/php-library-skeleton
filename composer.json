@@ -15,12 +15,14 @@
     "source": "https://github.com/Lctrs/php-library-skeleton"
   },
   "require": {
-    "php": "~8.0.0 || ~8.1.0 || ~8.2.0"
+    "php": "~8.0.2 || ~8.1.0 || ~8.2.0"
   },
   "require-dev": {
     "doctrine/coding-standard": "11.0.0",
     "ergebnis/composer-normalize": "2.29.0",
     "ergebnis/license": "2.1.0",
+    "infection/infection": "0.26.16",
+    "maglnet/composer-require-checker": "4.4.0",
     "phpstan/extension-installer": "1.2.0",
     "phpstan/phpstan": "1.9.4",
     "phpstan/phpstan-deprecation-rules": "1.1.1",
@@ -45,10 +47,11 @@
       "composer/package-versions-deprecated": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "ergebnis/composer-normalize": true,
-      "phpstan/extension-installer": true
+      "phpstan/extension-installer": true,
+      "infection/extension-installer": true
     },
     "platform": {
-      "php": "8.0.0"
+      "php": "8.0.2"
     },
     "preferred-install": "dist",
     "sort-packages": true
