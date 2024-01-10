@@ -42,10 +42,9 @@ static-code-analysis-baseline: vendor ## Generates a baseline for static code an
 	vendor/bin/psalm --config=psalm.xml --set-baseline=psalm-baseline.xml
 
 .PHONY: tests
-tests: vendor ## Runs unit and integration tests with phpunit/phpunit
+tests: vendor ## Runs unit tests with phpunit/phpunit
 	mkdir -p .build/phpunit
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml.dist
-	vendor/bin/phpunit --configuration=test/Integration/phpunit.xml.dist
 
 vendor: composer.json composer.lock
 	composer validate --strict

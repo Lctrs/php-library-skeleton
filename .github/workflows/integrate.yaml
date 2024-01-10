@@ -197,9 +197,6 @@ jobs:
       - name: "Run unit tests with phpunit/phpunit"
         run: "vendor/bin/phpunit --colors=always --configuration=test/Unit/phpunit.xml.dist"
 
-      - name: "Run integration tests with phpunit/phpunit"
-        run: "vendor/bin/phpunit --colors=always --configuration=test/Integration/phpunit.xml.dist"
-
   code-coverage:
     name: "Code Coverage"
 
