@@ -1,6 +1,6 @@
 # See https://github.com/ridedott/merge-me-action/
-# This workflow automates merges from patches sent by Renovate, and
-# only by renovate, once the other CI workflows pass
+# This workflow automates merges from patches sent by Dependabot, and
+# only by Dependabot, once the other CI workflows pass
 name: "Auto-merge Dependabot PRs"
 
 on: # yamllint disable-line rule:truthy
