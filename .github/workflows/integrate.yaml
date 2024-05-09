@@ -24,10 +24,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633" # v4.1.2
+        uses: "actions/checkout@v4.1.2"
 
       - name: "Lint YAML files"
-        uses: "ibiqlik/action-yamllint@v3.1"
+        uses: "ibiqlik/action-yamllint@v3.1.1"
         with:
           config_file: ".yamllint.yaml"
           file_or_dir: "."
@@ -81,7 +81,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633" # v4.1.2
+        uses: "actions/checkout@v4.1.2"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.30.0"
@@ -115,7 +115,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633" # v4.1.2
+        uses: "actions/checkout@v4.1.2"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.30.0"
@@ -175,7 +175,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633" # v4.1.2
+        uses: "actions/checkout@v4.1.2"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.30.0"
@@ -212,7 +212,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633" # v4.1.2
+        uses: "actions/checkout@v4.1.2"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.30.0"
@@ -237,7 +237,7 @@ jobs:
         run: "vendor/bin/phpunit --colors=always --configuration=test/Unit/phpunit.xml.dist --coverage-clover=.build/phpunit/logs/clover.xml"
 
       - name: "Send code coverage report to codecov.io"
-        uses: "codecov/codecov-action@v4-beta"
+        uses: "codecov/codecov-action@v4.3.1"
         with:
           files: ".build/phpunit/logs/clover.xml"
           token: "${{ secrets.CODECOV_TOKEN }}"
@@ -257,7 +257,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633" # v4.1.2
+        uses: "actions/checkout@v4.1.2"
 
       - name: "Install PHP with extensions"
         uses: "shivammathur/setup-php@2.30.0"

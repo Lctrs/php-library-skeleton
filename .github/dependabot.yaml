@@ -1,0 +1,44 @@
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+updates:
+  - commit-message:
+      include: "scope"
+      prefix: "chore"
+      prefix-development: "build"
+    directory: "/"
+    groups:
+      non-major:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      non-major-dev:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "composer"
+    schedule:
+      interval: "daily"
+    versioning-strategy: "increase"
+
+  - commit-message:
+      include: "scope"
+      prefix: "ci"
+    directory: "/"
+    groups:
+      non-major:
+        update-types:
+          - "minor"
+          - "patch"
+    labels:
+      - "dependency"
+    open-pull-requests-limit: 10
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "daily"
