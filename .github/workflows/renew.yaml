@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v4.2.1" # v4.1.2
+        uses: "actions/checkout@v4.2.2" # v4.1.2
         with:
           token: "${{ secrets.LCTRS_BOT_TOKEN }}"
 
